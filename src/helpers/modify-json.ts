@@ -8,6 +8,10 @@ export async function modifyJson(
 ) {
   await Promise.all(
     dependencies.map(async ({ dep }) => {
+      console.log(`file:./${linkedPackagesName}/${
+        dep.split('/')[1]
+      }`)
+      console.log('dep', JSON.stringify(dep, null, 4))
       packageJson.dependencies[dep] = `file:./${linkedPackagesName}/${
         dep.split('/')[1]
       }`;
