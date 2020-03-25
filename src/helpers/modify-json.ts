@@ -6,6 +6,7 @@ export async function modifyJson(
   packageJson: PackageJson,
   dependencies: { dep: string; folder: string }[]
 ) {
+  console.log('dependencies', dependencies)
   await Promise.all(
     dependencies.map(async ({ dep }) => {
       console.log(`file:./${linkedPackagesName}/${
